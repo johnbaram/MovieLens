@@ -1,0 +1,48 @@
+20181016 실전프로젝트1
+Big Data 실습
+
+
+Precision = TP / (TP+FP)			//예측 중 얼마나 맞았나
+Recall = TP / (TP+FN)			//다 찾아야하는데 얼마나 찾았나
+Accuracy = (TP+TN) / (TP+FP+TN+FN)		//호,불호 의 예측 적중률
+
+confidence 값을 높게 주면, Recall이 떨어질 가능성이 많지만, Precision이 올라간다.
+그래서 두 값이 적절하게 높게 유지되는 값을 찾는 것이 중요!
+
+0 < 1 < 2
+0 < 2 < 1
+1 < 0 < 2
+1 < 2 < 0
+2 < 0 < 1
+2 < 1 < 0
+
+
+.............................
+/*
+목표!
+Precision: 0.750
+Recall: 0.393
+All case accuracy: 0.605
+TP: 42
+FP: 14
+FN: 65
+TN: 79
+*/
+
+/*
+Training Data loading starts.
+Training Data loading finishes.
+Outlier removed: 402 users who have a big basket (size > 100) were removed
+Precision: 0.531
+Recall: 0.972
+All case accuracy: 0.525
+TP: 104
+FP: 92
+FN: 3
+TN: 1
+[[1, 92], [3, 104]]
+usage: Usage
+ -c,--config <arg>   configuration file
+ -d,--display        show statistics
+ -h,--help           show help message
+*/

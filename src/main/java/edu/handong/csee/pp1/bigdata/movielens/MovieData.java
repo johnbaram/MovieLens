@@ -9,6 +9,7 @@ import org.apache.commons.configuration.* ;
 public class MovieData 
 {
 	TreeMap<Integer, HashSet<Integer>>
+	//사용자 아이디, 좋아하는 영화 에 관한 정보들이 basket 안에 쌓이게 된다.
 	Baskets = new TreeMap<Integer, HashSet<Integer>>() ;
 
 	TreeMap<Integer, Integer>

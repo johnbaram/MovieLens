@@ -243,17 +243,54 @@ class FrequentItemsetSize2 implements Comparable
 @SuppressWarnings("rawtypes")
 class FrequentItemsetSize3 implements Comparable 
 {
-	int [] items ;
+	int [] items;
 
 	FrequentItemsetSize3(Set<Integer> s) {
 		/* TODO: implement this method */
-		
+		// 여기서도 order item id해주기
 		// values in s must be sorted and save into items array
+		
+		Integer [] ordering = s.toArray(new Integer[3]) ;
+		
+		if (ordering[0]<ordering[1] && ordering[1]<ordering[2]) {
+			this.items[0] = ordering[0];
+			this.items[1] = ordering[1];
+			this.items[2] = ordering[2];
+		} else if (ordering[0]<ordering[2] && ordering[2]<ordering[1]) {
+			this.items[0] = ordering[0];
+			this.items[1] = ordering[2];
+			this.items[2] = ordering[1];
+		} else if (ordering[1]<ordering[0] && ordering[0]<ordering[2]) {
+			this.items[0] = ordering[1];
+			this.items[1] = ordering[0];
+			this.items[2] = ordering[2];
+		} else if (ordering[1]<ordering[2] && ordering[2]<ordering[0]) {
+			this.items[0] = ordering[1];
+			this.items[1] = ordering[2];
+			this.items[2] = ordering[0];
+		} else if (ordering[2]<ordering[0] && ordering[0]<ordering[1]) {
+			this.items[0] = ordering[2];
+			this.items[1] = ordering[0];
+			this.items[2] = ordering[1];
+		} else {
+			this.items[0] = ordering[2];
+			this.items[1] = ordering[1];
+			this.items[2] = ordering[0];
+		}
 	}
-
+	
 	@Override
 	public int compareTo(Object obj) {  // this method is used for sorting when using TreeMap
 		/* TODO: implement this method */
+		FrequentItemsetSize3 p = (FrequentItemsetSize3) obj ;
+
+		/*if (this.first < p.first) 
+			return -1 ;
+		if (this.first > p.first)
+			return 1 ;
+
+		return (this.second - p.second) ;*/
+			
 		return 0 ;
 	}
 }
